@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get "/actor", controller: "actor", action: "first_actor"
+  get "/movies" => "movie#index"
 
-  get "/movie", controller: "movie", action: "first_movie"
+  post "/movies" => "movie#create"
 
-  get "/all_movies", controller: "movie", action: "all_movies"
+  get "/movies/:id" => "movie#show"
 
-  get "/horror_movies", controller: "movie", action: "horror_movies"
+  patch "movies/:id" => "movie#update"
+
+  delete "movies/:id" => "movie#destroy"
 end

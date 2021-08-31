@@ -1,18 +1,39 @@
 class MovieController < ApplicationController
-  
-  def all_movies
+
+  def index
     movies = Movie.all
-    render json: movies.as_json
-  
-  end
-  
-  def first_movie
-    movie = Movie.first
-    render json: movie.as_json
+    render json: movies
   end
 
-  def horror_movies
-    scary_movie = Movie.where(title: ["Jaws", "The Shining"])
-    render json: scary_movie.as_json
+  def create
+    movie = Movie.new(
+      title: params[:id],
+      year: params[:id],
+      plot: params[:id]
+    )
+    movie.save
+    render json: movie
   end
+
+  def show
+    movie = Movie.find(params[:id])
+    render json: movie
+  end
+
+  def update
+    movie = Movie.find(params[:id]) 
+    movie.title = params[:title] || movie.title
+    movite.year = params[:year]  || movie.year
+    movie.plot = params[:plot]   || movie.plot
+    movie.save
+    render json: movie
+  end
+
+  def destroy
+    movie = Movie.find(params[:id]) 
+    move.stroy 
+    render json: {message: "Movie successfully destroyed"}
+  end
+  
 end
+

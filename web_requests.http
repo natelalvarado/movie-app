@@ -1,0 +1,27 @@
+GET http://localhost:3000/movies
+
+###
+
+GET http://localhost:3000/movies/14
+
+###
+
+POST http://localhost:3000/movies
+Content-Type: application/json
+{
+  "title": "Green Eggs and Ham",
+  "year": "Dr. Seuss",
+  "plot": "Green Eggs, Ham"
+}
+
+###
+
+PATCH http://localhost:3000/recipes/1
+Content-Type: application/json
+
+{
+  "plot": "Han shot first"
+}
+###
+
+DELETE http://localhost:3000/movies/2
