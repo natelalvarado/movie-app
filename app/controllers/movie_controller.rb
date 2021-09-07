@@ -10,6 +10,8 @@ class MovieController < ApplicationController
       title: params[:id],
       year: params[:id],
       plot: params[:id]
+      director: params[:id]
+      english: params[:id]
     )
     movie.save
     render json: movie
@@ -23,8 +25,12 @@ class MovieController < ApplicationController
   def update
     movie = Movie.find(params[:id]) 
     movie.title = params[:title] || movie.title
-    movite.year = params[:year]  || movie.year
+    movie.year = params[:year]  || movie.year
     movie.plot = params[:plot]   || movie.plot
+    movie.save
+    movie.director = params[:director] || movie.director
+    movie.save
+    movie.english = params[:english] || movie.english 
     movie.save
     render json: movie
   end
