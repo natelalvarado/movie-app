@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   patch "movies/:id" => "movie#update"
 
   delete "movies/:id" => "movie#destroy"
+
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
+
 end
