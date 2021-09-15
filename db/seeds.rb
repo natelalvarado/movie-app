@@ -10,14 +10,27 @@
 
 # actor.save
 
-# actor = Actor.new(first_name: "John", last_name: "Malkovich", known_for: "Being John Malkovich")
+# # actor = Actor.new(first_name: "John", last_name: "Malkovich", known_for: "Being John Malkovich")
 
-# actor.save
+# # actor.save
 
-movie = Movie.new(title:"Jaws", year:1975, plot:"Worst fishing trip ever")
+# movie = Movie.new(title:"Jaws", year:1975, plot:"Worst fishing trip ever")
 
-movie.save
+# movie.save
 
-movie = Movie.new(title:"City of God", year:2002, plot:"Personal history of the world's largest slum")
+# movie = Movie.new(title:"City of God", year:2002, plot:"Personal history of the world's largest slum")
 
-movie.save
+# movie.save
+
+# Genre.create!([
+#   {name: "horror"},
+#   {name: "science fiction"}, 
+#   {name: "action"},
+#   {name: "drama"}
+# ])
+
+MovieGenre.create!([
+  {genre_id: 2, movie_id: 1},
+  {genre_id: 1, movie_id: 2},
+  {genre_id: 4, movie_id: 3}
+])
